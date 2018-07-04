@@ -1,0 +1,1 @@
+# smartlook-plugin-opencart-3.0-journal-2
