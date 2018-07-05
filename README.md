@@ -1,4 +1,4 @@
-# Smartlook plugin - OpenCart (Journal 2)
+# Smartlook plugin - OpenCart 3.0 (Journal 2)
 
 Standalone version for OpenCart theme: Journal 2.
 
