@@ -1,7 +1,10 @@
 # Smartlook plugin - OpenCart (Journal 2)
 
-* Compatibility: versions 3000 - 3020.
-* Standalone version for OpenCart theme: Journal 2.
+Standalone version for OpenCart theme: Journal 2.
+
+## Compatibility
+
+Versions: 3.0.0.0 - 3.0.2.0
 
 ## Copyright
 
