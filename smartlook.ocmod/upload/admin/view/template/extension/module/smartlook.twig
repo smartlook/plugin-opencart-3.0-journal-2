@@ -1,0 +1,244 @@
+{{ header }}{{ leftMenu }}
+<div class="spacer"></div>
+<div id="content">
+	<div class="wrap">
+	{% if enabled %}
+		<main role="main">
+			<div id="third">
+				<div class="main-bg">
+					<section class="top-bar">
+						<div class="text-center">
+						</div>
+					</section>
+					<section>
+						<div class="row">
+							<p class="text-gray">
+							<span class="left">
+								<img src="{{ base }}/view/image/smartlook/logo.png" alt="smartlook logo" />
+							</span>
+								<span class="right">
+								{% if email %}{{ email }}{% endif %} | <a class="js-action-disable" href="javascript: void(0);">{{ translator.translate('disconnectAccount') }}</a>
+							</span>
+							</p>
+							<div class="clear"></div>
+							<section class="intro">
+								<h1>{{ translator.translate('popcorn') }}</h1>
+								<h4 class="text-gray">{{ translator.translate('goToSmartlookText') }}</h4>
+								{% if project %}
+									<div class="intro--btn">
+										<a href="https://www.smartlook.com/app/dashboard?utm_source=OpenCart&utm_medium=integration&utm_campaign=link" target="_blank" class="js-register btn btn-primary btn-xl">{{ translator.translate('goToSmartlook') }}</a>
+									</div>
+									<p class="tiny text-center text-gray bigger-m">{{ translator.translate('openInNewTab') }}</p>
+								{% endif %}
+
+								<div class="spacer"></div>
+								<div class="spacer"></div>
+
+								<form class="form-centered js-project-form">
+									<div class="row">
+										<div class="col-sm-4 text-right">
+											<label for="project">{{ translator.translate('project') }}</label>
+										</div>
+										<div class="col-sm-4">
+											<select id="project" name="project" class="form-control js-project-select">
+												<option value="">{{ translator.translate('newProject') }}</option>
+												{% set selected = FALSE %}
+												{% for p in projects %}
+													<option{% if project and project == p['id'] %} selected{% set selected = TRUE %}{% endif %} value="{{ p['id'] }}">{{ p['name'] }}</option>
+												{% endfor %}
+											</select>
+										</div>
+										<div class="col-sm-4"></div>
+									</div>
+									<div class="row js-new-project"{% if selected %} style="display: none;"{% endif %}>
+										<div class="col-sm-4 text-right">
+											<label for="projectName">{{ translator.translate('newProjectName') }}</label>
+										</div>
+										<div class="col-sm-4">
+											<input type="text" id="projectName" name="projectName" class="form-control">
+										</div>
+										<div class="col-sm-4"></div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4"></div>
+										<div class="col-sm-4">
+											<button type="submit" class="btn btn-default">{{ translator.translate('save') }}</button>
+										</div>
+										<div class="col-sm-4"></div>
+									</div>
+									<div class="loader"></div>
+								</form>
+							</section>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+	{% else %}
+		<main role="main" class="sections" id="home"{% if formAction %} style="display: none;"{% endif %}>
+			<div id="first">
+				<div class="main-bg with-guy">
+					<section class="top-bar">
+						<img src="{{ base }}/view/image/smartlook/logo.png" alt="smartlook logo" />
+						<a href="javascript: void(0);" class="js-login btn btn-default">{{ translator.translate('connectAccount') }}</a>
+					</section>
+					<section class="intro">
+						<div>
+							<h1 class="lead">
+								{{ translator.translate('recordEverything') }}
+							</h1>
+							<h3>{{ translator.translate('lookAtWebsite') }}</h3>
+
+							<div class="alerts row">
+								{% if message %}
+									<div class="col-sm-4"></div>
+									<div class="col-sm-4">
+										<div class="alert alert-danger js-clear">
+											{{ translator.translate(message) }}
+										</div>
+									</div>
+									<div class="col-sm-4"></div>
+								{% endif %}
+							</div>
+
+							<form class="form-centered js-register-form">
+								<div class="row">
+									<div class="col-sm-4 text-right">
+										<label for="email">{{ translator.translate('email') }}</label>
+									</div>
+									<div class="col-sm-4">
+										<input id="email" type="email" name="email" class="form-control">
+									</div>
+									<div class="col-sm-4"></div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4 text-right">
+										<label for="password">{{ translator.translate('password') }}</label>
+									</div>
+									<div class="col-sm-4">
+										<input id="password" type="password" name="password" class="form-control">
+									</div>
+									<div class="col-sm-4"></div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4"></div>
+									<div class="col-sm-4">
+										<input type="submit" class="btn btn-primary btn-xl" value="{{ translator.translate('createNewAccount') }}">
+									</div>
+									<div class="col-sm-4"></div>
+								</div>
+								<div class="loader"></div>
+							</form>
+						</div>
+					</section>
+				</div>
+				<section>
+					<div class="text-center">
+						<div class="section--header">
+							<h2>{{ translator.translate('weRecordEverything') }}</h2>
+						</div>
+						<div class="section--body">
+							<div class="row big-gray">
+								{{ translator.translate('features') }}
+							</div>
+							<div class="row big-gray">
+								{{ translator.translate('moreFeatures') }}
+							</div>
+						</div>
+						<div>
+							<img src="{{ base }}/view/image/smartlook/screen.png">
+						</div>
+						<div class="section--header">
+							<h2>{{ translator.translate('trusted') }}</h2>
+						</div>
+						<div class="section--body">
+							<div class="customers">
+								<img src="{{ base }}/view/image/smartlook/logo-hyundai.png" alt="Hyundai" />
+								<img src="{{ base }}/view/image/smartlook/logo-kiwi.png" alt="Kiwi.com" />
+								<img src="{{ base }}/view/image/smartlook/logo-conrad.png" alt="Conrad" />
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<main role="main" class="sections" id="connect"{% if formAction == NULL %} style="display: none;"{% endif %}>
+			<div id="second">
+				<div class="main-bg">
+					<section class="top-bar">
+						<div>
+							<a href="javascript: void(0);" class="js-close-form">
+								<img src="{{ base }}/view/image/smartlook/logo.png" alt="smartlook logo" />
+							</a>
+						</div>
+					</section>
+					<section id="signUp">
+						<div class="text-center">
+							<div>
+								<div class="section--header">
+									<h1 class="lead">
+										{{ translator.translate('connectAccount') }}
+									</h1>
+								</div>
+								<div class="section--body">
+									<div class="form--inner">
+										<div class="alerts row">
+											{% if message %}
+												<div class="col-sm-4"></div>
+												<div class="col-sm-4">
+													<div class="alert alert-danger js-clear">
+														{{ translator.translate(message) }}
+													</div>
+												</div>
+												<div class="col-sm-4"></div>
+											{% endif %}
+										</div>
+										<form class="form-centered js-login-form">
+											<div class="row">
+												<div class="col-sm-4 text-right">
+													<label for="email">{{ translator.translate('email') }}</label>
+												</div>
+												<div class="col-sm-4">
+													<input id="email" type="email" name="email" class="form-control">
+												</div>
+												<div class="col-sm-4"></div>
+											</div>
+											<div class="row">
+												<div class="col-sm-4 text-right">
+													<label for="password">{{ translator.translate('password') }}</label>
+												</div>
+												<div class="col-sm-4">
+													<input id="password" type="password" name="password" class="form-control">
+												</div>
+												<div class="col-sm-4"></div>
+											</div>
+											<div class="row">
+												<div class="col-sm-4"></div>
+												<div class="col-sm-4">
+													<input type="submit" class="btn btn-primary btn-xl" value="{{ translator.translate('connectAccount') }}">
+												</div>
+												<div class="col-sm-4"></div>
+											</div>
+											<div class="spaced-row">
+												<a href="https://www.smartlook.com/app/sign/password-reset?utm_source=OpenCart&utm_medium=integration&utm_campaign=link">{{ translator.translate('forgotPassword') }}</a>
+											</div>
+											<div class="spaced-row">
+												{{ translator.translate('notUserYet') }} <a href="javascript: void(0);" class="js-close-form">{{ translator.translate('createAccount') }}</a>
+											</div>
+											<div class="loader"></div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+	{% endif %}
+
+	</div>
+
+</div>
+
+{{ footer }}

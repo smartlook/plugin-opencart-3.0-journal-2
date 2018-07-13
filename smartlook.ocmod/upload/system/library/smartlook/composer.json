@@ -1,0 +1,13 @@
+{
+	"name": "kurzor/opencart-smartlook",
+	"license": "proprietary",
+	"require": {
+		"smartlook/webapi": "v1.0.1"
+	},
+	"authors": [
+		{
+			"name": "Tomáš Blatný",
+			"email": "blatny.tomas@seznam.cz"
+		}
+	]
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<name>Smartlook</name>
+	<code>smartlook</code>
+	<version>1.0</version>
+	<author>Kurzor</author>
+	<link>http://www.smartlook.com</link>
+	<file path="catalog/view/theme/default/template/common/footer.twig">
+		<operation>
+			<search><![CDATA[
+</footer>
+			]]></search>
+			<add position="before"><![CDATA[
+			{{ smartLook }}
+            ]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/common/footer.php">
+		<operation>
+			<search><![CDATA[
+			return $this->load->view('common/footer', $data);
+            ]]></search>
+			<add position="before"><![CDATA[
+			$data['smartLook'] = $this->load->controller('extension/module/smartlook');
+            ]]></add>
+		</operation>
+	</file>
+</modification>

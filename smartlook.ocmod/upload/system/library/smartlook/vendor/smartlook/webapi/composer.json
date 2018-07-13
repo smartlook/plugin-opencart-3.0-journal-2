@@ -1,0 +1,20 @@
+{
+    "name": "smartlook/webapi",
+    "type": "library",
+    "keywords": ["webapi", "client", "smartlook"],
+    "authors": [{
+        "name": "Dušan Kmeť",
+        "email": "dusan@smartsupp.com"
+    }],
+    "description" : "Smartlook Web API client for PHP.",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "nette/di": "^2.3",
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
