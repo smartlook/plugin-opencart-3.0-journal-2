@@ -20,7 +20,7 @@ $_['openInNewTab'] = '(This will open a new browser tab)';
 $_['weRecordEverything'] = 'We\'ll record all visitor movement on your website';
 $_['features'] = 'Smartlook is a simple tool which records the screens of real users on your website.<br>You can see what visitors clicked with their mouse, what they filled into a form field,<br>where they spend most of their time, and how they browse through each page.';
 $_['moreFeatures'] = 'See all features on <a href="https://www.smartlook.com/?utm_source=OpenCart&utm_medium=integration&utm_campaign=link">our website</a>.';
-$_['trusted'] = 'More than 80 000 happy customers';
+$_['trusted'] = 'More than 250 000 happy customers';
 
 $_['email'] = 'Email';
 $_['password'] = 'Password';
