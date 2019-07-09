@@ -1,7 +1,5 @@
 <?php
-/**
- * @author Tomáš Blatný
- */
+
 class ControllerExtensionModuleSmartlook extends Controller
 {
 
