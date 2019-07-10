@@ -3,7 +3,7 @@
 	<name>Smartlook</name>
 	<code>smartlook</code>
 	<version>1.0</version>
-	<author>Kurzor</author>
+	<author>Smartlook</author>
 	<link>http://www.smartlook.com</link>
 	<file path="catalog/view/theme/default/template/common/footer.twig">
 		<operation>
