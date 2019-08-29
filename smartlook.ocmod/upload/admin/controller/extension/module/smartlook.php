@@ -136,6 +136,15 @@ class ControllerExtensionModuleSmartlook extends Controller
 		$this->response->setOutput($this->load->view('extension/module/smartlook', $data));
 	}
 
+    public function install() {
+        $this->load->model('setting/setting');
+        $this->model_setting_setting->editSetting('module_smartlook', ['module_smartlook_status'=>1]);
+    }
+
+    public function uninstall() {
+        $this->load->model('setting/setting');
+        $this->model_setting_setting->deleteSetting('module_smartlook_status');
+    }
 }
 
 class SmartlookModuleExtensionTranslator
